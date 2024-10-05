@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <button
-          className="navbar-toggler"
+          className="navbar-toggler ms-auto" // Move the toggler to the right
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -27,10 +27,10 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="collapse navbar-collapse justify-content-center"
+          className="collapse navbar-collapse justify-content-center" // Center align the menu items
           id="navbarNav"
         >
-          <ul className="navbar-nav">
+          <ul className="navbar-nav text-center"> {/* Center-align the list items */}
             <li className="nav-item">
               <Link className="nav-link" href="/">
                 {loaded && (
