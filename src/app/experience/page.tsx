@@ -75,7 +75,15 @@ export default function ExperiencePage() {
       {/* Conditional rendering for experience cards */}
       {experiences.map((experience, index) =>
         isMobile ? (
-          <div key={index} className="text-center mb-4">
+          <motion.div
+            key={index}
+            className="text-center mb-4"
+            initial={{ opacity: 0, y: 20 }} // Start from invisible and a bit lower
+            whileInView={{ opacity: 1, y: 0 }} // Slide up into view
+            exit={{ opacity: 0, y: 20 }} // Slide down on exit
+            transition={{ duration: 0.5 }} // Animation duration
+            viewport={{ once: false }} // Allow multiple animations
+          >
             <h2 className="fw-bold fs-4">
               <FontAwesomeIcon icon={experience.icon} /> {experience.title}
             </h2>
@@ -88,7 +96,7 @@ export default function ExperiencePage() {
             </ul>
             {/* Render separator line for mobile screens */}
             <hr className="my-4" style={{ borderTop: '1px solid #ccc' }} />
-          </div>
+          </motion.div>
         ) : (
           <motion.div
             key={index}
@@ -99,6 +107,9 @@ export default function ExperiencePage() {
               boxShadow: "0 10px 20px rgba(0, 0, 0, 0.3)",
             }}
             transition={{ type: "spring", stiffness: 200, damping: 30 }}
+            initial={{ opacity: 0, y: 20 }} // Start from invisible and a bit lower
+            whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
+            viewport={{ once: false }} // Allow multiple animations
           >
             <div className="card-body">
               <h2 className="card-title fw-bold fs-4">

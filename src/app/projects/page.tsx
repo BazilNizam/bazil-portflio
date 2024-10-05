@@ -98,7 +98,15 @@ export default function ProjectsPage() {
       {/* Conditional rendering for project cards */}
       {projects.map((project, index) => (
         isMobile ? (
-          <div key={index} className="text-center mb-4">
+          <motion.div
+            key={index}
+            className="text-center mb-4"
+            initial={{ opacity: 0, y: 20 }} // Start from invisible and a bit lower
+            whileInView={{ opacity: 1, y: 0 }} // Slide up into view
+            exit={{ opacity: 0, y: 20 }} // Slide down on exit
+            transition={{ duration: 0.5 }} // Animation duration
+            viewport={{ once: false }} // Allow multiple animations as it scrolls in and out of view
+          >
             <h2 className="fw-bold fs-4">
               <FontAwesomeIcon icon={project.icon} /> {project.title}
             </h2>
@@ -117,7 +125,7 @@ export default function ProjectsPage() {
             </Link>
             {/* Render separator line for mobile screens */}
             <hr className="my-4" style={{ borderTop: '1px solid #ccc' }} />
-          </div>
+          </motion.div>
         ) : (
           <motion.div
             key={index}
@@ -130,7 +138,7 @@ export default function ProjectsPage() {
               duration: 0.5, // Slower entrance animation duration
               ease: [0.25, 0.1, 0.25, 1], // Ease in-out for smoothness
             }}
-            viewport={{ once: false }}
+            viewport={{ once: false }} // Allow multiple animations
           >
             <div className="card-body">
               <h2 className="card-title fw-bold fs-4">
