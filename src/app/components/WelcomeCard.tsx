@@ -42,7 +42,7 @@ export default function WelcomeCard() {
         />
       </div>
       <p className="lead fs-5">
-        I&apos;m a web developer who creates stunning, responsive websites.
+        I&apos;m a web developer.
         <br />
         <span className="fs-4 fw-bold">
           Let&apos;s build something amazing together!
