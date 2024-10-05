@@ -1,0 +1,9 @@
+.gradientText {
+    font-size: 4rem; /* Adjust size as needed */
+    font-weight: bold; /* Make it bold */
+    background: linear-gradient(90deg, #D4145A, #FBB03B); /* Gradient from dark pink to yellow */
+    -webkit-background-clip: text; /* For Safari */
+    background-clip: text; /* For other browsers */
+    color: transparent; /* Make the text transparent */
+  }
+  
