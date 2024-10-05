@@ -8,7 +8,7 @@ export default function ProjectsPage() {
   return (
     <div className="container mt-5">
       <h1 className="text-center">Projects</h1>
-      <p className="text-center mb-4">🌟 Here are some of the projects I've worked on! 🚀</p>
+      <p className="text-center mb-4">🌟 Here are some of the projects I&apos;ve worked on! 🚀</p> {/* Escaped here */}
 
       {/* Project Cards */}
       {[
