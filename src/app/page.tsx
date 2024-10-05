@@ -1,13 +1,15 @@
-"use client";
+"use client"; // Ensure this is a client component
 import { useEffect } from "react";
 import WelcomeCard from "./components/WelcomeCard";
 import AboutMe from "./components/AboutMe";
 
+// Use the import statement instead of require
+import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Import Bootstrap JS
+
 export default function Home() {
   useEffect(() => {
-    // Load Bootstrap JS
-    typeof document !== "undefined" ? require("bootstrap") : null;
-  }, []);
+    // Bootstrap JavaScript is imported above, so no need to require it here
+  }, []); // No additional actions are required here
 
   return (
     <>

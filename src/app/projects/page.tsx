@@ -22,7 +22,7 @@ export default function ProjectsPage() {
             '📡 Implemented Axios for seamless API calls.',
           ],
           link: '#', // Add your link here
-          icon: faLaptopCode
+          icon: faLaptopCode,
         },
         {
           title: 'EasyClass',
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
             '📦 Successfully uploaded for public use.',
           ],
           link: 'https://github.com/BazilNizam/easyclass',
-          icon: faLaptopCode
+          icon: faLaptopCode,
         },
         {
           title: 'Nutrimet',
@@ -44,7 +44,7 @@ export default function ProjectsPage() {
             '🔄 Leveraged JSON data to dynamically display products.',
           ],
           link: 'https://github.com/BazilNizam/nutrimet',
-          icon: faShoppingCart
+          icon: faShoppingCart,
         },
         {
           title: 'Netflix Clone',
@@ -55,18 +55,18 @@ export default function ProjectsPage() {
             '🎨 Styled with vanilla CSS for a sleek look.',
           ],
           link: 'https://netflix-clone-bz.netlify.app/',
-          icon: faFilm
+          icon: faFilm,
         },
         {
           title: 'Amazon Clone',
-          description: 'An eCommerce platform mimicking Amazon\'s functionality.',
+          description: 'An eCommerce platform mimicking Amazon&apos;s functionality.', // Escaped single quote here
           tech: '🛍️ Built with React and rendering routing!',
           features: [
             '🔗 Used plain CSS for responsive design.',
             '📦 Implemented rendering routing for smooth navigation.',
           ],
           link: 'https://github.com/BazilNizam/Amazon-Clone',
-          icon: faShoppingCart
+          icon: faShoppingCart,
         },
         {
           title: 'Uber Clone',
@@ -77,7 +77,7 @@ export default function ProjectsPage() {
             '🎨 Styled with Tailwind CSS for a responsive UI.',
           ],
           link: 'https://uber-clone-bazil.vercel.app/Login',
-          icon: faLaptopCode
+          icon: faLaptopCode,
         },
       ].map((project, index) => (
         <motion.div

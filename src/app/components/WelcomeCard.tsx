@@ -21,7 +21,9 @@ export default function WelcomeCard() {
         </h2>
 
         {/* Text with Gradient Mask */}
-        <h3 className={`${styles.gradientText} display-5`}>I'm Basil</h3>
+        <h3 className={`${styles.gradientText} display-5`}>
+          I&apos;m Basil
+        </h3>
 
         {/* Profile Image */}
         <div className="my-4">
@@ -36,10 +38,10 @@ export default function WelcomeCard() {
 
         {/* Catchy Two-line Sentence */}
         <p className="card-text lead fs-5">
-          I’m a web developer who creates stunning, responsive websites.
+          I&apos;m a web developer who creates stunning, responsive websites.
           <br />
           <span className="fs-4 fw-bold">
-            Let’s build something amazing together!
+            Let&apos;s build something amazing together!
           </span>
         </p>
       </div>
