@@ -1,50 +1,76 @@
-"use client";
-import Image from "next/image";
-import { motion } from "framer-motion"; // Import Framer Motion
-import styles from "./WelcomeCard.module.css"; // Importing the CSS module for styling
+'use client';
+import Image from 'next/image';
+import { motion } from 'framer-motion'; // Import Framer Motion
+import { useEffect, useState } from 'react';
+import styles from './WelcomeCard.module.css'; // Importing the CSS module for styling
 
 export default function WelcomeCard() {
-  return (
-    <motion.div
-      className="card text-center rounded shadow p-4 mb-4"
-      style={{ width: "80%", maxWidth: "800px", margin: "auto" }}
-      whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.3)" }} // Hover animation
-      transition={{ type: "spring", stiffness: 200, damping: 30 }} // Slower hover animation
-    >
-      <div className="card-body">
-        {/* Introduction with waving hand emoji */}
-        <h2 className="card-title display-4 fw-bold fs-3">
-          Hi,{" "}
-          <span role="img" aria-label="waving hand">
-            👋
-          </span>
-        </h2>
+  const [isMobile, setIsMobile] = useState(false);
 
-        {/* Text with Gradient Mask */}
-        <h3 className={`${styles.gradientText} display-5`}>
-          I&apos;m Basil
-        </h3>
+  // Effect to determine screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 992); // Bootstrap's large breakpoint
+    };
 
-        {/* Profile Image */}
-        <div className="my-4">
-          <Image
-            src="/images/dp.png" // Ensure this path is correct
-            alt="Basil's Photo"
-            width={150}
-            height={150}
-            className="rounded-circle"
-          />
-        </div>
+    // Initial check
+    handleResize();
 
-        {/* Catchy Two-line Sentence */}
-        <p className="card-text lead fs-5">
-          I&apos;m a web developer who creates stunning, responsive websites.
-          <br />
-          <span className="fs-4 fw-bold">
-            Let&apos;s build something amazing together!
-          </span>
-        </p>
+    // Add resize event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup listener on unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Shared content
+  const sharedContent = (
+    <>
+      <h2 className="fw-bold fs-1">
+        Hi,<span role="img" aria-label="waving hand">👋</span>
+      </h2>
+      <h3 className={`${styles.gradientText}`}>
+        I&apos;m Basil
+      </h3>
+      <div className="my-4">
+        <Image
+          src="/images/dp.png" // Ensure this path is correct
+          alt="Basil's Photo"
+          width={150}
+          height={150}
+          className="rounded-circle"
+        />
       </div>
-    </motion.div>
+      <p className="lead fs-5">
+        I&apos;m a web developer who creates stunning, responsive websites.
+        <br />
+        <span className="fs-4 fw-bold">
+          Let&apos;s build something amazing together!
+        </span>
+      </p>
+    </>
+  );
+
+  return (
+    <div className="container my-4">
+      {isMobile ? (
+        <div className="text-center">
+          {/* Mobile Layout */}
+          {sharedContent}
+        </div>
+      ) : (
+        // Card for larger screens
+        <motion.div
+          className="card text-center rounded shadow p-4 mb-4"
+          style={{ width: '80%', maxWidth: '800px', margin: 'auto' }}
+          whileHover={{ scale: 1.05, boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)' }} // Hover animation
+          transition={{ type: 'spring', stiffness: 200, damping: 30 }} // Slower hover animation
+        >
+          <div className="card-body">
+            {sharedContent}
+          </div>
+        </motion.div>
+      )}
+    </div>
   );
 }
