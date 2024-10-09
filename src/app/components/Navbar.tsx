@@ -58,7 +58,7 @@ const Navbar = () => {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                href="https://drive.google.com/drive/u/1/folders/1yGaMrr9niuFslkUXZesJuwi3_DHw4uaR"
+                href="https://drive.google.com/file/d/1EOUtIQ4QmJmGXm0kTo388JjNYcnUqWNX/view"
                 target="_blank"
                 rel="noopener noreferrer"
               >
