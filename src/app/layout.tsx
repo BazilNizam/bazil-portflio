@@ -7,8 +7,8 @@ import Footer from './components/Footer'; // Import Footer component
 const outfit = Outfit({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'My Next.js Project',
-  description: 'A website using Next.js and Bootstrap',
+  title: 'Basil',
+  description: 'My portfolio website! 🚀',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
